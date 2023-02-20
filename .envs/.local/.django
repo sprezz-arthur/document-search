@@ -5,3 +5,5 @@ IPYTHONDIR=/app/.ipython
 DJANGO_EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
 EMAIL_HOST=smtp.hostinger.com
 EMAIL_PORT=465
+EMAIL_HOST_USER=auto@sprezz.fr
+EMAIL_HOST_PASSWORD =123456Auto!
