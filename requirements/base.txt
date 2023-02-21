@@ -27,4 +27,5 @@ django-jazzmin==2.6.0
 django-haystack==3.2.1
 elasticsearch==7.17.9
 elasticsearch-dsl==7.4.0
+django-elasticsearch-debug-toolbar==3.0.2
 PyPDF2==3.0.1

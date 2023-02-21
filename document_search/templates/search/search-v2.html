@@ -32,6 +32,9 @@
                         <tr>
                             <td>
                                 <a href="{% url result.object|admin_page result.object.pk %}">{{ result.object }}</a>
+                                <br/>
+                                <br/>
+                                <a href="{{ result.object.file.url }}">{{ result.object.file.name }}</a>
                             </td>
                             <td>
                                 <span class="search-result-text">{{ result_text|safe|escape }}</span>
