@@ -17,16 +17,32 @@
     </form>
     {% if query %}
         <h3>Results</h3>
-        {% for result in page %}
-            {% with result.text|truncatewords_html:50 as result_text %}
-                <p>
-                    <a href="{% url result.object|admin_page result.object.pk %}">{{ result.object }}</a>
-                    <span class="search-result-text">{{ result_text|safe|escape }}</span>
-                </p>
-            {% endwith %}
-        {% empty %}
-            <p>No results found.</p>
-        {% endfor %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Object</th>
+                    <th>Text</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in page %}
+                    {% with result.text|truncatewords_html:50 as result_text %}
+                        <tr>
+                            <td>
+                                <a href="{% url result.object|admin_page result.object.pk %}">{{ result.object }}</a>
+                            </td>
+                            <td>
+                                <span class="search-result-text">{{ result_text|safe|escape }}</span>
+                            </td>
+                        </tr>
+                    {% endwith %}
+                {% empty %}
+                    <tr>
+                        <td colspan="2">No results found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         {% if page.has_other_pages %}
             <nav>
                 {% if page.has_previous %}
