@@ -83,13 +83,12 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
+    "haystack",
 ]
 
 LOCAL_APPS = [
     "document_search.users",
     "tenders",
-
-    
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -312,3 +311,15 @@ SPECTACULAR_SETTINGS = {
 # Django-Jazzmin
 JAZZMIN_SETTINGS = {}
 JAZZMIN_SETTINGS["show_ui_builder"] = True
+
+# Haystack
+
+HAYSTACK_CONNECTIONS = {
+    "default": {
+        "ENGINE": "haystack.backends.elasticsearch7_backend.Elasticsearch7SearchEngine",
+        "URL": "elasticsearch:9200/",
+        "INDEX_NAME": "haystack",
+    },
+}
+
+HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals.RealtimeSignalProcessor"

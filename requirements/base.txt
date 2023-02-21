@@ -20,4 +20,11 @@ djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework
 django-cors-headers==3.13.0  # https://github.com/adamchainz/django-cors-headers
 # DRF-spectacular for api documentation
 drf-spectacular==0.25.1  # https://github.com/tfranzel/drf-spectacular
+
+
+# Sprezz
 django-jazzmin==2.6.0
+django-haystack==3.2.1
+elasticsearch==7.17.9
+elasticsearch-dsl==7.4.0
+PyPDF2==3.0.1
