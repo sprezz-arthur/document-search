@@ -1,0 +1,11 @@
+<div style="display: flex; align-items: center;">
+    {% if widget.wrap_label %}
+        <label {% if widget.attrs.id %} for="{{ widget.attrs.id }}"{% endif %}
+               style="margin-right: 10px">
+        {% endif %}
+        {% include "django/forms/widgets/input.html" %}
+        {% if widget.wrap_label %}
+            {{ widget.label }}
+        </label>
+    {% endif %}
+</div>

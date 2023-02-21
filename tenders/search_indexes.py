@@ -48,3 +48,12 @@ class FileIndex(indexes.SearchIndex, indexes.Indexable):
                 for page in pdf_reader.pages:
                     contents += page.extract_text()
                 return contents
+
+
+class OxeIndex(indexes.SearchIndex, indexes.Indexable):
+    text = indexes.CharField(
+        document=True,
+    )
+
+    def get_model(self):
+        return models.Oxe

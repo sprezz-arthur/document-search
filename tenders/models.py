@@ -19,3 +19,11 @@ class File(models.Model):
 
     def __str__(self):
         return f"{self.id}: {self.file.name}"
+
+
+class Oxe(models.Model):
+    file = models.FileField(upload_to="tenders/")
+    contents = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.id}: {self.file.name}"

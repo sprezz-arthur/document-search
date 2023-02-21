@@ -38,10 +38,17 @@ urlpatterns += [
     ),
 ]
 
+from tenders.views import MySearchView
+
 # Haystack
 urlpatterns += [
     path("search/", include("haystack.urls")),
 ]
+
+urlpatterns += [
+    path("search-v2/", MySearchView.as_view(), name="search_view-2"),
+]
+
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
